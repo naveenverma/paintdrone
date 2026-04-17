@@ -1,0 +1,45 @@
+Room,Description,Value
+Entire Roomplan,Latitude,30.624179 m
+Entire Roomplan,Longitude,76.816940 m
+Entire Roomplan,Altitude [m],297
+Entire Roomplan,Total exterior floor area [m^2],17.1
+Entire Roomplan,Total livable floor area [m^2],15.5
+Bedroom,Floor area [m^2],15.5
+Bedroom,Dimensions (bounding box) [m],4.7 x 3.3
+Bedroom,Dimensions (inscribed) [m],4.7 x 3.1
+Entire Roomplan,Wall area [m^2],40.1
+Bedroom,Wall area [m^2],40.1
+Entire Roomplan,Volume [m^3],42.21
+Bedroom,Volume [m^3],42.21 
+Bedroom,Ceiling height [m],2.7 
+Entire Roomplan,Total perimeter in rooms [m],16.1
+Bedroom,Perimeter [m],16.1
+Bedroom,Doors total casing length [m],11.3
+Entire Roomplan,Total window area [m^2],0.0
+Bedroom,Door dimensions [m],0.8 x 2.3
+Bedroom,Door dimensions [m],0.6 x 2.4
+Entire Roomplan,# Cabinets,5
+Entire Roomplan,# TVs,1
+Entire Roomplan,# Task chairs,1
+Entire Roomplan,# Sofa doubles,1
+Entire Roomplan,# Side tables,1
+Entire Roomplan,# Chairs,1
+Entire Roomplan,# Beds,1
+Bedroom,Cabinet dimensions (w x h x d) [m],1.4 x 2.1 x 0.6
+Bedroom,Cabinet dimensions (w x h x d) [m],0.9 x 0.8 x 0.5
+Bedroom,Cabinet dimensions (w x h x d) [m],0.8 x 0.9 x 0.4
+Bedroom,Cabinet dimensions (w x h x d) [m],0.2 x 0.8 x 0.5
+Bedroom,Cabinet dimensions (w x h x d) [m],0.3 x 0.6 x 0.4
+Bedroom,Bed dimensions (w x h x d) [m],1.9 x 0.6 x 2.1
+Bedroom,Sofa double dimensions (w x h x d) [m],1.6 x 1.0 x 1.0
+Bedroom,Task chair dimensions (w x h x d) [m],0.6 x 1.1 x 0.6
+Bedroom,Side table dimensions (w x h x d) [m],1.2 x 1.1 x 0.2
+Bedroom,Chair dimensions (w x h x d) [m],0.4 x 0.9 x 0.4
+Bedroom,TV dimensions (w x h x d) [m],0.9 x 0.6 x 0.1
+Key,Dimensions (bounding box),Smallest rectangle that contains the room
+Key,Dimensions (inscribed),Largest rectangle that fits inside the room
+Key,Dimensions,Rectangular rooms: inscribed dimensions == bounding box dimensions
+Settings,Wall thickness [m],0.100
+Settings,Doors casing width [m],0.040
+Settings,Windows casing width [m],0.040
+Settings,Each room area method,Internal wall area excluded

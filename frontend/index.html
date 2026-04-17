@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paintdrone: 3D Color Editor & Drone Mission Generator</title>
+  <link rel="stylesheet" href="./style.css" />
+  
+  <!-- Import map for Three.js -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <aside class="panel">
+      <h1>🎨 Paintdrone</h1>
+      <p class="muted">
+        Load a 3D model, assign colors to regions, and export drone paint missions in QGC or GeoJSON format.
+      </p>
+
+      <section class="form-section">
+        <h2>Model Setup</h2>
+        <label for="modelFile">📁 Load 3D Model or 2D Drawing</label>
+        <input id="modelFile" type="file" accept=".glb,.gltf,.glb2,.dxf" />
+        <p class="muted file-hint">Select a GLB, GLTF, or DXF file from your computer</p>
+
+        <label for="modelId">Model ID</label>
+        <input id="modelId" type="text" value="paintdrone_demo_01" />
+
+        <label for="meshName">Target mesh name (optional)</label>
+        <input id="meshName" type="text" placeholder="e.g. roof_section_a" />
+      </section>
+
+      <section class="form-section">
+        <h2>Color Assignment</h2>
+        <label for="colorPicker">Pick color</label>
+        <input id="colorPicker" type="color" value="#FF6B6B" />
+
+        <label for="regionName">Region Name</label>
+        <input id="regionName" type="text" placeholder="e.g. Main Building Roof" />
+
+        <div class="button-row">
+          <button id="applyColorBtn">Apply Color</button>
+          <button id="addRegionBtn" class="secondary">Add Region</button>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Export Drone Mission</h2>
+        <select id="exportFormat">
+          <option value="geojson">GeoJSON (Web Standard)</option>
+          <option value="qgc_plan">QGC Plan (Mission Planner)</option>
+          <option value="ardupilot">ArduPilot MAVLink</option>
+        </select>
+        <button id="exportMissionBtn" class="success">📤 Export Mission</button>
+      </section>
+
+      <div class="info">
+        <p><strong>Selected color:</strong> <span id="selectedColorText">#FF6B6B</span></p>
+        <p><strong>Regions mapped:</strong> <span id="regionCount">0</span></p>
+        <p><strong>Last update:</strong> <span id="lastUpdate">–</span></p>
+      </div>
+
+      <div class="status-block">
+        <h2>Status</h2>
+        <pre id="statusOutput">Ready to load model...</pre>
+      </div>
+
+      <div class="notes">
+        <h2>💡 How It Works</h2>
+        <ol>
+          <li>Load a Polycam GLB/GLTF 3D model</li>
+          <li>Select regions and assign paint colors</li>
+          <li>Export as drone mission (GeoJSON/QGC)</li>
+          <li>Deploy to drone flight controller</li>
+        </ol>
+      </div>
+    </aside>
+
+    <main class="viewer-wrap">
+      <div id="viewer"></div>
+      <div class="overlay-info">
+        <p id="hint">👆 Click 🎨 Paint Mode (top-left) to start painting areas with colors</p>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
